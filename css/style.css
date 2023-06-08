@@ -106,7 +106,7 @@ button {
 }
 
 #carta-jogador, #carta-maquina {
-    width: 370px;
+    width: 350px;
     height: 500px;
     display: flex;
     align-items: flex-end;
@@ -182,3 +182,25 @@ form {
     box-shadow: 20px 20px 60px #bebebe,
                   -20px -20px 60px #ffffff;
    }
+
+   /* MOBILE RESPONSIVE   */
+
+@media screen and (max-width: 609px) {
+   .hero img {
+    width: 20rem;
+   }
+
+   .container {
+    margin-top: -2rem;
+   }
+
+   .h2-mbl {
+    font-size: 15px;
+   }
+
+   .card {
+    width: 100px;
+   }
+
+
+  }
