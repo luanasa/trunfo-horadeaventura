@@ -123,7 +123,7 @@ button {
 .carta-status {
     height: 160px;
     margin: 2rem;
-    color: white;
+    color: rgb(0, 0, 0);
     z-index: 2;
 }
 
@@ -161,6 +161,9 @@ form {
 
 #opcoes {
     text-align: start;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
   }
 
 .carta-status input {
@@ -171,3 +174,11 @@ form {
     width: 15rem;
 }
 
+.card {
+    width: 190px;
+    height: 254px;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+                  -20px -20px 60px #ffffff;
+   }
