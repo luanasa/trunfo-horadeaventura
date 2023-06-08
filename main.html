@@ -10,30 +10,32 @@
 
 <body>
     <div class="container">
-        <img src="img/trunfo-img.png" class="page-logo"
-            alt="">
-        <h1 class="page-title">Super Trunfo</h1>
-        <button onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+        <div class="hero">
+            <img src="./img/logo.svg" alt="Adventure time logo">
+            <button class="play" onclick="sortearCarta()" id="btnSortear">Sortear carta</button>
+        </div>
+        
         <form id="form">
             <h2>Escolha o seu atributo</h2>
             <div class="wrapper">
-                <div>
-                    <div id="carta-jogador">
-                        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png"
-                            style=" width: inherit; height: inherit; position: absolute;">
-                        <h3></h3>
-                    </div>
+                <div id="carta-jogador">
+                    <img 
+                    src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png">
                 </div>
-                <div>
-                    <div id="carta-maquina" class="carta"><img
-                            src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png"
-                            style=" width: inherit; height: inherit; position: absolute;"></div>
+
+                <div id="resultado"></div>
+
+                <div id="carta-maquina">
+                    <img
+                    src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png">       
                 </div>
+
             </div>
-            <button class="button-jogar" type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
-            <div id="resultado"></div>
-           <!--  <button type="button" id="btnJogarNovamente" onclick="jogarNovamente()" disabled="true">Jogar novamente</button> -->
         </form>
+
+        <div class="btn-play">
+            <button class="play" type="button" id="btnJogar" onclick="jogar()" disabled="false">Jogar</button>
+        </div>
     </div>
     <script src="js/setup.js"></script>
 </body>

@@ -122,11 +122,11 @@ function jogar() {
   var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
   
   if ( cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos[atributoSelecionado]) {
-    htmlResultado = "<p class='resultado-final'>Venceu</p>";
+    htmlResultado = "<p class='resultado-final'>Você venceu</p>";
   } 
   else if (
     cartaJogador.atributos[atributoSelecionado] < cartaMaquina.atributos[atributoSelecionado]) {
-    htmlResultado = "<p class='resultado-final'>Perdeu</p>";
+    htmlResultado = "<p class='resultado-final'>Você perdeu</p>";
   } 
   else {
     htmlResultado = "<p class='resultado-final'>Empatou</p>";
