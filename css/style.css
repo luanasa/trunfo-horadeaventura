@@ -194,12 +194,14 @@ form {
     margin-top: -2rem;
    }
 
-   .h2-mbl {
-    font-size: 15px;
+   .container form {
+    align-items: center;
    }
 
-   .card {
-    width: 100px;
+   .wrapper {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
    }
 
 
