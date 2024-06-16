@@ -1,6 +1,6 @@
 var carta1 = {
   nome: "Finn",
-  imagem: "https://cdnb.artstation.com/p/assets/images/images/021/644/693/large/delina-christianty-finn-adventure-time.jpg?1572441518",
+  imagem: "./img/finn.jpg",
   atributos: {
   ataque: 10,
   defesa: 18,
@@ -22,7 +22,7 @@ var carta2 = {
 
 var carta3 = {
   nome: "Princesa Jujuba",
-  imagem: "./img/bonni.png",
+  imagem: "./img/bonni.jpg",
   atributos: {
   ataque: 10,
   defesa: 5,
