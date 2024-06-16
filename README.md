@@ -20,5 +20,5 @@ O jogo Trunfo Hora de Aventura permite que você jogue uma partida de Super Trun
 - Selecionar um atributo para competir
 - Comparar os atributos das cartas e determinar o vencedor
 - Exibir o resultado da partida
-
-![frame_safari_dark](https://github.com/luanasa/trunfo-horadeaventura/assets/38231334/23b02fb7-df0d-4c38-be99-e0ab76ee57f4)
+  
+![frame_safari_dark](https://github.com/luanasa/trunfo-horadeaventura/assets/38231334/db43cd1f-476c-435d-95cc-229ffe3825ae)
