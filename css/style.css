@@ -5,21 +5,16 @@
 
 body {
     background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-07-super-trunfo-bg.png');
-    background-size: cover;
-
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+    background-size: cover;    
 }
 
 .container {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 3rem;
+    gap: 2rem;
+
+    color: white;
 }
 
 .hero {
@@ -27,10 +22,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: min-content;
-    
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.hero img {
+    width: 25rem;
 }
 
 button {
@@ -102,29 +97,29 @@ button {
 
 .wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 4rem;
 }
 
 #carta-jogador, #carta-maquina {
-    width: 350px;
-    height: 500px;
+    width: 250px;
+    height: 300px;
     display: flex;
     align-items: flex-end;
     position: relative;
-    background-size:contain;
+    background-size:cover;
     background-repeat: no-repeat;
     border-radius: 33px;
 }
 
 #carta-jogador, #carta-maquina p {
-    margin: 13px 10px;
+    margin: 10px;
   }
 
 .carta-status {
     height: 160px;
-    margin: 2rem;
+    margin: 1rem;
     color: rgb(0, 0, 0);
-    z-index: 2;
 }
 
 .resultado-final {
@@ -146,17 +141,11 @@ form {
 .carta-subtitle {
   z-index: 2;
   position: absolute;
-  top: 25px;
-  left: 37px;
+  top: 20px;
+  left: 30px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #2c1423;
-}
-
-#cartas {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  color: white;
 }
 
 #opcoes {
@@ -175,8 +164,6 @@ form {
 }
 
 .card {
-    width: 190px;
-    height: 254px;
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: 20px 20px 60px #bebebe,
