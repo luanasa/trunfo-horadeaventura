@@ -86,89 +86,101 @@ var carta8 = {
 }
 };
 
-var cartas = [carta1, carta2, carta3, carta4, carta5, carta6, carta7, carta8]
-var cartaMaquina
-var cartaJogador
+var cartas = [carta1, carta2, carta3, carta4, carta5, carta6, carta7, carta8];
+var cartaMaquina;
+var cartaJogador;
+
+function resetCartaMaquina() {
+  var divCartaMaquina = document.getElementById("carta-maquina");
+  divCartaMaquina.style.backgroundImage = 'none';
+  divCartaMaquina.innerHTML = '';
+}
 
 function sortearCarta() {
-var numeroDeCartasMaquina = parseInt(Math.random() * 8);
-cartaMaquina = cartas[numeroDeCartasMaquina];
-console.log(cartaMaquina);
+  resetCartaMaquina();  // Reseta a carta da máquina
 
-var numeroDeCartaJogador = parseInt(Math.random() * 8);
-while (numeroDeCartasMaquina == numeroDeCartaJogador) {
-  numeroDeCartaJogador = parseInt(Math.random() * 8);
-}
-cartaJogador = cartas[numeroDeCartaJogador];
-console.log(cartaJogador);
-document.getElementById("btnSortear").disabled = true;
-document.getElementById("btnJogar").disabled = false;
+  var numeroDeCartasMaquina = parseInt(Math.random() * 8);
+  cartaMaquina = cartas[numeroDeCartasMaquina];
+  console.log(cartaMaquina);
 
-exibirCartaJogador();
+  var numeroDeCartaJogador = parseInt(Math.random() * 8);
+  while (numeroDeCartasMaquina == numeroDeCartaJogador) {
+    numeroDeCartaJogador = parseInt(Math.random() * 8);
+  }
+  cartaJogador = cartas[numeroDeCartaJogador];
+  console.log(cartaJogador);
+  document.getElementById("btnSortear").disabled = true;
+  document.getElementById("btnJogar").disabled = false;
+
+  exibirCartaJogador();
 }
 
 function obtemAtributoSelecionado() {
-   var radioAtributos = document.getElementsByName("atributo");
+  var radioAtributos = document.getElementsByName("atributo");
 
-for (var i = 0; i < radioAtributos.length; i++) {
-  if (radioAtributos[i].checked == true) return radioAtributos[i].value;
-}
+  for (var i = 0; i < radioAtributos.length; i++) {
+    if (radioAtributos[i].checked == true) return radioAtributos[i].value;
+  }
 }
 
 function jogar() {
-  var atributoSelecionado = obtemAtributoSelecionado()
-  var divResultado = document.getElementById("resultado")
+  var atributoSelecionado = obtemAtributoSelecionado();
+  var divResultado = document.getElementById("resultado");
   var valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
   var valorCartaMaquina = cartaMaquina.atributos[atributoSelecionado];
-  
-  if ( cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos[atributoSelecionado]) {
+
+  var htmlResultado = "";
+  if (valorCartaJogador > valorCartaMaquina) {
     htmlResultado = "<p class='resultado-final'>Você venceu</p>";
-  } 
-  else if (
-    cartaJogador.atributos[atributoSelecionado] < cartaMaquina.atributos[atributoSelecionado]) {
+  } else if (valorCartaJogador < valorCartaMaquina) {
     htmlResultado = "<p class='resultado-final'>Você perdeu</p>";
-  } 
-  else {
+  } else {
     htmlResultado = "<p class='resultado-final'>Empatou</p>";
   }
   divResultado.innerHTML = htmlResultado;
 
   document.getElementById("btnSortear").disabled = false;
   document.getElementById("btnJogar").disabled = true;
- 
-  exibirCartaMaquina()
+
+  exibirCartaMaquina();  // Exibe a carta da máquina após o jogo começar
 }
 
 function exibirCartaJogador() {
-  var divCartaJogador = document.getElementById("carta-jogador")
+  var divCartaJogador = document.getElementById("carta-jogador");
   divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`;
-var tagHTML = "<div id ='opcoes' class='carta-status'>";
-  
-var opcoesTexto = "";
-for (var atributo in cartaJogador.atributos) {
-  opcoesTexto +=
-    "<input type='radio' name = 'atributo' value= '" +
-    atributo +
-    "'>" +
-    atributo +
-    " " +
-    cartaJogador.atributos[atributo] +
-    "<br>";
-}
-var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
-divCartaJogador.innerHTML = nome + tagHTML + opcoesTexto + "</div>";
+  var tagHTML = "<div id ='opcoes' class='carta-status'>";
+
+  var opcoesTexto = "";
+  for (var atributo in cartaJogador.atributos) {
+    opcoesTexto +=
+      "<input type='radio' name='atributo' value='" +
+      atributo +
+      "'>" +
+      atributo +
+      " " +
+      cartaJogador.atributos[atributo] +
+      "<br>";
+  }
+  var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`;
+  divCartaJogador.innerHTML = nome + tagHTML + opcoesTexto + "</div>";
 }
 
 function exibirCartaMaquina() {
   var divCartaMaquina = document.getElementById("carta-maquina");
   divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`;
-var tagHTML = "<div id ='opcoes' class='carta-status'>";
-  
-var opcoesTexto = "";
+  var tagHTML = "<div id ='opcoes' class='carta-status'>";
+
+  var opcoesTexto = "";
   for (var atributo in cartaMaquina.atributos) {
     opcoesTexto +=
-      "<p type='text' name='atributo' value='" + atributo + "'>" + atributo + " " + cartaMaquina.atributos[atributo] + "</p>";
+      "<p type='text' name='atributo' value='" +
+      atributo +
+      "'>" +
+      atributo +
+      " " +
+      cartaMaquina.atributos[atributo] +
+      "</p>";
   }
   var nome = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`;
-divCartaMaquina.innerHTML = nome + tagHTML + opcoesTexto + "</div>";
+  divCartaMaquina.innerHTML = nome + tagHTML + opcoesTexto + "</div>";
 }
